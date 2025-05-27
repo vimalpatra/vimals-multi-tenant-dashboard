@@ -49,31 +49,31 @@
       },
       "subscriptionPlan": "Professional",
       "supportLevel": "Business Hours"
+    },
+    "abc-corp": {
+      "name": "ABC Corp.",
+      "description": "Global leaders in corporate solutions",
+      "contact": "help@acme.com",
+      "logo": "/abc-corp-logo.jpg",
+      "theme": {
+        "background": "bg-red-50",
+        "text": "text-red-800",
+        "header": "bg-red-200"
+      },
+      "features": ["billing"],
+      "lease": {
+        "startDate": "2024-01-01",
+        "endDate": "2025-12-31"
+      },
+      "address": {
+        "street": "Plot No. 45, Industrial Area Phase II",
+        "city": "Gurugram",
+        "state": "Haryana",
+        "zip": "122015",
+        "country": "India"
+      },
+      "subscriptionPlan": "Enterprise",
+      "supportLevel": "24/7 Premium"
     }
-  },
-  "abc-corp": {
-    "name": "ABC Corp.",
-    "description": "Global leaders in corporate solutions",
-    "contact": "help@acme.com",
-    "logo": "/abc-corp-logo.jpg",
-    "theme": {
-      "background": "bg-red-50",
-      "text": "text-red-800",
-      "header": "bg-red-200"
-    },
-    "features": ["billing"],
-    "lease": {
-      "startDate": "2024-01-01",
-      "endDate": "2025-12-31"
-    },
-    "address": {
-      "street": "Plot No. 45, Industrial Area Phase II",
-      "city": "Gurugram",
-      "state": "Haryana",
-      "zip": "122015",
-      "country": "India"
-    },
-    "subscriptionPlan": "Enterprise",
-    "supportLevel": "24/7 Premium"
   }
 }

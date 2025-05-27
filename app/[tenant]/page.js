@@ -1,5 +1,7 @@
 import config from "@/config.json";
 import FeatureLoader from "@components/FeatureLoader";
+import DashboardWelcome from "@/shared/components/tenants/DashboardWelcome";
+import NoFeatures from "@/shared/components/tenants/NoFeatures";
 
 export default async function TenantPage({ params }) {
   const tenantKey = (await params).tenant;
@@ -7,17 +9,13 @@ export default async function TenantPage({ params }) {
   const features = tenant?.features || [];
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold mb-4">
-        Welcome to {tenant.name}’s Dashboard!
-      </h1>
+    <main className="p-8">
+      <DashboardWelcome name={tenant.name} />
       {features.map((f) => (
         <FeatureLoader key={f} feature={f} />
       ))}
 
-      {features.length === 0 && (
-        <p className="italic text-gray-500">No features to display.</p>
-      )}
-    </div>
+      {!features.length && <NoFeatures />}
+    </main>
   );
 }

@@ -1,7 +1,7 @@
 import config from "@/config.json";
 import "@/app/globals.css";
-import TenantDetails from "@/components/TenantDetails";
-import Image from "next/image";
+import TenantHeader from "@/shared/components/tenants/TenantHeader";
+import TenantDetails from "@/shared/components/tenants/TenantDetails";
 
 export default async function TenantLayout({ children, params }) {
   const tenant = (await params).tenant;
@@ -12,20 +12,13 @@ export default async function TenantLayout({ children, params }) {
   }
 
   const { name, logo, theme } = tenantConfig;
-  const { background, text, header } = theme;
+  const { background, text } = theme;
 
   return (
-    <html lang="en">
-      <body className={`${background} ${text} min-h-screen`}>
-        <header className={`${header} p-4 flex items-center space-x-4`}>
-          <Image src={logo} alt={name} width={48} height={48} />
-          <h1 className="text-xl font-bold">{name}</h1>
-        </header>
-
-        <TenantDetails config={tenantConfig} />
-
-        <main className="p-8">{children}</main>
-      </body>
-    </html>
+    <div className={`${background} ${text} min-h-screen flex flex-col`}>
+      <TenantHeader name={name} logo={logo} theme={theme} />
+      <TenantDetails config={tenantConfig} />
+      {children}
+    </div>
   );
 }
