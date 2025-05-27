@@ -1,0 +1,41 @@
+{
+  "login": {
+    "title": "Tenant Login",
+    "success": "Login successful! Redirecting…",
+    "invalidCredentials": "Invalid credentials",
+    "usernamePlaceholder": "Enter your username",
+    "passwordPlaceholder": "Enter your password",
+    "loginButton": "Log In",
+    "genericError": "An error occurred. Please try again.",
+    "tenantLabel": "Tenant",
+    "usernameLabel": "Username",
+    "passwordLabel": "Password"
+  },
+  "features": {
+    "noFeatures": "No features. Please Upgrade!",
+    "comingSoon": "We're working hard to bring you this feature. Stay tuned for updates!",
+    "charts": "Charts Feature",
+    "notifications": "Notifications Feature"
+  },
+  "tenant": {
+    "infoTitle": "Tenant Info",
+    "lease": "Lease",
+    "address": "Address",
+    "plan": "Plan",
+    "support": "Support",
+    "notFoundMessage": "Tenant “{{tenant}}” not found ❌"
+  },
+  "header": {
+    "logoutButton": "Logout"
+  },
+  "dashboard": {
+    "welcome": "Welcome to {{name}}'s Dashboard!"
+  },
+  "metadata": {
+    "loginTitle": "Login - Multi-Tenant Dashboard",
+    "loginDescription": "Login for tenants",
+    "dashboardTitle": "Tenant Dashboard",
+    "dashboardDescription": "Multi-tenant dashboard with features",
+    "siteTitle": "Multi-Tenant Dashboard"
+  }
+}

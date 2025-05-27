@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/app/globals.css";
+import enUS from "@shared/locales/en_US.json";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -12,13 +13,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Multi-Tenant Dashboard",
+  title: enUS.metadata.siteTitle,
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-gray-50 text-gray-900">{children}</body>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-gray-50 text-gray-900`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

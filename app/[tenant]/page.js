@@ -2,25 +2,24 @@ import config from "@/config.json";
 import FeatureLoader from "@/shared/components/features/FeatureLoader";
 import DashboardWelcome from "@/shared/components/tenants/DashboardWelcome";
 import NoFeatures from "@/shared/components/features/NoFeatures";
+import enUS from "@shared/locales/en_US.json";
 
 export const metadata = {
-  title: "Tenant Dashboard",
-  description: "Multi-tenant dashboard with features",
+  title: enUS.metadata.dashboardTitle,
+  description: enUS.metadata.dashboardDescription,
 };
 
-export default async function TenantPage({ params }) {
-  const tenantKey = (await params).tenant;
-  const tenant = config.tenants[tenantKey];
-  const features = tenant?.features || [];
+export default async function TenantDashboard({ params }) {
+  const tenant = params.tenant;
 
   return (
     <main className="p-8">
-      <DashboardWelcome name={tenant.name} />
-      {features.map((f) => (
-        <FeatureLoader key={f} feature={f} />
-      ))}
-
-      {!features.length && <NoFeatures />}
+      <DashboardWelcome name={tenant} />
+      {config.tenants[tenant]?.features?.length > 0 ? (
+        <FeatureLoader tenant={tenant} />
+      ) : (
+        <NoFeatures />
+      )}
     </main>
   );
 }

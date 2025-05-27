@@ -3,16 +3,19 @@
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@shared/ui/Button";
+import { API_ENDPOINTS } from "@/lib/constants";
+import enUS from "@shared/locales/en_US.json";
 
 export default function TenantHeader({ name, logo, theme }) {
   const router = useRouter();
 
-  async function handleLogout() {
-    await fetch("/api/logout", { method: "POST" });
+  const handleLogout = async () => {
+    await fetch(API_ENDPOINTS.LOGOUT, { method: "POST" });
     router.push("/");
-  }
+  };
 
   const { header } = theme;
+
   return (
     <header
       className={`${header} p-4 flex justify-between items-center space-x-4`}
@@ -25,7 +28,7 @@ export default function TenantHeader({ name, logo, theme }) {
         onClick={handleLogout}
         className="cursor-pointer bg-red-600 hover:bg-red-700"
       >
-        Logout
+        {enUS.header.logoutButton}
       </Button>
     </header>
   );

@@ -34,7 +34,5 @@ export async function POST(req) {
 
   const res = NextResponse.json({ success: true });
   res.cookies.set(SESSION_COOKIE, token, cookieOpts);
-
-  console.log("Login API - Set cookie in response");
   return res;
 }

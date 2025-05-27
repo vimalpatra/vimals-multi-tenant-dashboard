@@ -1,10 +1,11 @@
 import LoginForm from "@shared/components/LoginForm";
+import enUS from "@shared/locales/en_US.json";
 
 export const revalidate = 3600;
 
 export const metadata = {
-  title: "Login - Multi-Tenant Dashboard",
-  description: "Login for tenants",
+  title: enUS.metadata.loginTitle,
+  description: enUS.metadata.loginDescription,
 };
 
 export default function Home() {

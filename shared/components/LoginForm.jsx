@@ -7,6 +7,8 @@ import { Input } from "@shared/ui/Input";
 import { Select } from "@shared/ui/Select";
 import { Toast } from "@shared/ui/Toast";
 import { Users, User, Lock } from "lucide-react";
+import { API_ENDPOINTS } from "@/lib/constants";
+import enUS from "@shared/locales/en_US.json";
 
 export default function LoginForm() {
   const router = useRouter();
@@ -17,30 +19,34 @@ export default function LoginForm() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  async function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
+    setSuccess("");
 
-    const res = await fetch("/api/login", {
-      method: "POST",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({ tenant, username, password }),
-    });
+    try {
+      const res = await fetch(API_ENDPOINTS.LOGIN, {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ tenant, username, password }),
+      });
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (res.ok && data.success) {
-      setSuccess("Login successful! Redirecting…");
-      setTimeout(() => {
-        router.push(`/${tenant}`);
-      }, 800);
-    } else {
-      setError(data.error || "Invalid credentials");
+      if (res.ok) {
+        setSuccess(enUS.login.success);
+        setTimeout(() => router.push(`/${tenant}`), 1000);
+      } else {
+        setError(data.error || enUS.login.invalidCredentials);
+      }
+    } catch (err) {
+      setError(enUS.login.genericError);
     }
-  }
+  };
 
   return (
     <>
@@ -50,10 +56,10 @@ export default function LoginForm() {
         onSubmit={handleSubmit}
         className="space-y-6 bg-white p-8 rounded shadow-md w-full max-w-md"
       >
-        <h2 className="text-2xl font-bold">Tenant Login</h2>
+        <h2 className="text-2xl font-bold">{enUS.login.title}</h2>
 
         <Select
-          label="Tenant"
+          label={enUS.login.tenantLabel}
           icon={Users}
           options={tenants.map((t) => ({
             value: t,
@@ -64,28 +70,28 @@ export default function LoginForm() {
         />
 
         <Input
-          label="Username"
+          label={enUS.login.usernameLabel}
           icon={User}
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          placeholder="Enter your username"
+          placeholder={enUS.login.usernamePlaceholder}
           required
         />
 
         <Input
-          label="Password"
+          label={enUS.login.passwordLabel}
           icon={Lock}
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          placeholder="Enter your password"
+          placeholder={enUS.login.passwordPlaceholder}
           required
         />
 
         {error && <p className="text-red-500 text-sm">{error}</p>}
 
         <Button type="submit" className="w-full">
-          Log In
+          {enUS.login.loginButton}
         </Button>
       </form>
     </>
