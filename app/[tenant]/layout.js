@@ -3,8 +3,8 @@ import "@/app/globals.css";
 import TenantDetails from "@/components/TenantDetails";
 import Image from "next/image";
 
-export default function TenantLayout({ children, params }) {
-  const tenant = params.tenant;
+export default async function TenantLayout({ children, params }) {
+  const tenant = (await params).tenant;
   const tenantConfig = config.tenants[tenant];
 
   if (!tenantConfig) {

@@ -1,68 +1,16 @@
 {
   "tenants": {
-    "acme-corp": {
-      "name": "ABC Corp.",
-      "description": "Global leaders in corporate solutions",
-      "contact": "help@acme.com",
-      "logo": "/abc-corp-logo.jpg",
-      "theme": {
-        "background": "bg-red-50",
-        "text": "text-red-800",
-        "header": "bg-red-200"
-      },
-      "features": ["charts"],
-      "lease": {
-        "startDate": "2024-01-01",
-        "endDate": "2025-12-31"
-      },
-      "address": {
-        "street": "Plot No. 45, Industrial Area Phase II",
-        "city": "Gurugram",
-        "state": "Haryana",
-        "zip": "122015",
-        "country": "India"
-      },
-      "subscriptionPlan": "Enterprise",
-      "supportLevel": "24/7 Premium"
-    },
-
-    "vimal-co": {
-      "name": "Vimal & Co.",
-      "description": "Your trusted partner for SaaS insights.",
-      "contact": "support@beta.co",
-      "logo": "/vimal-and-co.jpeg",
-      "theme": {
-        "background": "bg-blue-50",
-        "text": "text-blue-800",
-        "header": "bg-blue-200"
-      },
-      "features": ["billing"],
-      "lease": {
-        "startDate": "2023-06-15",
-        "endDate": "2024-06-14"
-      },
-      "address": {
-        "street": "5th Floor, DLF Cyber Greens, DLF Cyber City, DLF Phase 2, Sector 24",
-        "city": "Gurugram",
-        "state": "Haryana",
-        "zip": "122002",
-        "country": "India"
-      },
-      "subscriptionPlan": "Professional",
-      "supportLevel": "Business Hours"
-    },
-
     "milan-corp": {
       "name": "Milan Corp.",
       "description": "Innovative solutions for modern enterprises.",
       "contact": "contact@milan-corp.com",
-      "logo": "/milan-corp-logo.png",
+      "logo": "/milan-corp-logo.jpeg",
       "theme": {
         "background": "bg-green-50",
         "text": "text-green-800",
         "header": "bg-green-200"
       },
-      "features": ["charts", "notifications"],
+      "features": ["charts"],
       "lease": {
         "startDate": "2024-03-01",
         "endDate": "2025-03-01"
@@ -76,6 +24,56 @@
       },
       "subscriptionPlan": "Enterprise",
       "supportLevel": "Premium Business Hours"
+    },
+    "vimal-co": {
+      "name": "Vimal & Co.",
+      "description": "Your trusted partner for SaaS insights.",
+      "contact": "support@beta.co",
+      "logo": "/vimal-and-co.jpeg",
+      "theme": {
+        "background": "bg-blue-50",
+        "text": "text-blue-800",
+        "header": "bg-blue-200"
+      },
+      "features": ["charts", "notifications"],
+      "lease": {
+        "startDate": "2023-06-15",
+        "endDate": "2024-06-14"
+      },
+      "address": {
+        "street": "5th Floor, DLF Cyber Greens, DLF Cyber City, DLF Phase 2, Sector 24",
+        "city": "Gurugram",
+        "state": "Haryana",
+        "zip": "122002",
+        "country": "India"
+      },
+      "subscriptionPlan": "Professional",
+      "supportLevel": "Business Hours"
     }
+  },
+  "abc-corp": {
+    "name": "ABC Corp.",
+    "description": "Global leaders in corporate solutions",
+    "contact": "help@acme.com",
+    "logo": "/abc-corp-logo.jpg",
+    "theme": {
+      "background": "bg-red-50",
+      "text": "text-red-800",
+      "header": "bg-red-200"
+    },
+    "features": ["billing"],
+    "lease": {
+      "startDate": "2024-01-01",
+      "endDate": "2025-12-31"
+    },
+    "address": {
+      "street": "Plot No. 45, Industrial Area Phase II",
+      "city": "Gurugram",
+      "state": "Haryana",
+      "zip": "122015",
+      "country": "India"
+    },
+    "subscriptionPlan": "Enterprise",
+    "supportLevel": "24/7 Premium"
   }
 }
