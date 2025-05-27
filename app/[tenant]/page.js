@@ -1,7 +1,12 @@
 import config from "@/config.json";
-import FeatureLoader from "@components/FeatureLoader";
+import FeatureLoader from "@/shared/components/features/FeatureLoader";
 import DashboardWelcome from "@/shared/components/tenants/DashboardWelcome";
-import NoFeatures from "@/shared/components/tenants/NoFeatures";
+import NoFeatures from "@/shared/components/features/NoFeatures";
+
+export const metadata = {
+  title: "Tenant Dashboard",
+  description: "Multi-tenant dashboard with features",
+};
 
 export default async function TenantPage({ params }) {
   const tenantKey = (await params).tenant;
