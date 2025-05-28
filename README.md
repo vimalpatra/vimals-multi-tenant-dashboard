@@ -72,3 +72,7 @@ project is deployed on Vercel, if you want to deploy it as well,
 1.  Connect your Git repository to Vercel.
 2.  During the setup or in the project settings under "Environment Variables", add `JWT_SECRET` with your unique secret key.
 3.  Vercel will automatically build and deploy your application on new commits.
+
+## Made with sweat and tears by Vimal 😇
+
+## Cheers! 🥲
