@@ -11,10 +11,6 @@ export async function middleware(req) {
   const token = req.cookies.get(SESSION_COOKIE)?.value;
   const { pathname } = req.nextUrl;
 
-  console.log("Middleware - Checking path:", pathname);
-  console.log("Middleware - SECRET exists:", !!SECRET);
-  console.log("Middleware - SECRET length:", SECRET?.length);
-
   // Redirect logged in users away from the login page
   if (pathname === "/" && token) {
     try {
