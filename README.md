@@ -40,14 +40,17 @@ This project is built with NEXT, leveraging its App Router for routing and serve
     npm run dev
     # or yarn dev
     ```
-5.  Open [http://localhost:3000] in your browser.
+5.  Open `[http://localhost:3000]` in your browser or live preview at (https://vimals-multi-tenant-dashboard.vercel.app/)
 
 6.  Use one of the valid users (hardcoded) for accessing mentioned tenant below,
+
+```
     {
     "milan-corp": { username: "milan", password: "milan123" },
     "vimal-co": { username: "vimal", password: "vimal123" },
     "abc-corp": { username: "admin", password: "admin123" },
     }
+```
 
 ## Design Decisions
 
@@ -75,4 +78,4 @@ project is deployed on Vercel, if you want to deploy it as well,
 
 ## Made with sweat and tears by Vimal 😇
 
-## Cheers! 🥲
+**Cheers! 🥲**
