@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import FeatureComingSoon from "@shared/components/features/FeatureComingSoon";
 import FeatureCard from "@shared/components/features/FeatureCard";
-import { Skeleton } from "@shared/ui/Skeleton";
+import { SkeletonLoader } from "@shared/ui/SkeletonLoader";
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -11,7 +11,7 @@ const featureComponents = {
     {
       loading: () => (
         <FeatureCard>
-          <Skeleton />
+          <SkeletonLoader />
         </FeatureCard>
       ),
     }
@@ -22,7 +22,7 @@ const featureComponents = {
     {
       loading: () => (
         <FeatureCard>
-          <Skeleton />
+          <SkeletonLoader />
         </FeatureCard>
       ),
     }
