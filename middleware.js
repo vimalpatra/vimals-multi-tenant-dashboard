@@ -12,6 +12,8 @@ export async function middleware(req) {
   const { pathname } = req.nextUrl;
 
   console.log("Middleware - Checking path:", pathname);
+  console.log("Middleware - SECRET exists:", !!SECRET);
+  console.log("Middleware - SECRET length:", SECRET?.length);
 
   // Redirect logged in users away from the login page
   if (pathname === "/" && token) {
@@ -22,7 +24,8 @@ export async function middleware(req) {
         payload.tenant
       );
       return NextResponse.redirect(new URL(`/${payload.tenant}`, req.url));
-    } catch {
+    } catch (err) {
+      console.error("Middleware - JWT verification error:", err.message);
       // expired -> let them log in again
     }
   }
